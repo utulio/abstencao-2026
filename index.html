@@ -30,15 +30,6 @@ footer{margin-top:3em;color:var(--mu);font-size:.9rem;border-top:1px solid var(-
 <select id="uf"></select>
 <div class="kpis" id="kpis"></div>
 <div class="grid two"><img id="img-mapa" alt=""><img id="img-barras" alt=""></div>
-<p><a id="csv" download>⬇ Baixar ranking completo dos municípios (CSV)</a></p>
-
-<h2>Dados para download</h2>
-<ul>
-<li><a href="dados/abstencao_2026_regiao.csv" download>Por região (CSV)</a></li>
-<li><a href="dados/abstencao_2026_uf.csv" download>Por estado (CSV)</a></li>
-<li><a href="dados/abstencao_2026_municipio.csv" download>Por município (CSV)</a></li>
-<li><a href="dados/abstencao_2026_zona.csv" download>Por zona eleitoral (CSV)</a></li>
-</ul>
 
 <h2>Metodologia</h2>
 <ul>
@@ -59,7 +50,6 @@ function mostra(k){
   document.getElementById("img-mapa").alt = `Mapa da abstenção em ${v.nome}`;
   document.getElementById("img-barras").src = `img/barras_${k}.png`;
   document.getElementById("img-barras").alt = `Pessoas que não votaram em ${v.nome}`;
-  document.getElementById("csv").href = `dados/ranking_${k}.csv`;
   document.getElementById("kpis").innerHTML =
     `<div class="kpi"><b>${v.pct}</b>abstenção</div><div class="kpi"><b>${v.abs}</b>não votaram</div><div class="kpi"><b>${v.apt}</b>eleitores aptos</div>`;
   history.replaceState(null, "", "#" + k);
